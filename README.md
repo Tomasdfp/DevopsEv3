@@ -2,7 +2,8 @@
 
 ## Integrantes
 - Tomas Delfierro
-- [Nombre del compañero]
+- Karen Fuentealba
+
 
 ## Arquitectura implementada
 - **Orquestación**: AWS ECS con Fargate
