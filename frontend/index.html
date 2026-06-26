@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EP3 Frontend</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px auto; text-align: center; }
+        .container { padding: 20px; border: 1px solid #ddd; border-radius: 10px; }
+        h1 { color: #2563eb; }
+        #status { color: #16a34a; }
+        #api-response { background: #f3f4f6; padding: 15px; border-radius: 5px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 EP3 - Frontend</h1>
+        <p>Orquestación y Automatización en AWS con CI/CD</p>
+        <div id="status">✅ Frontend corriendo correctamente</div>
+        <div id="api-response">
+            <h3>Respuesta del Backend:</h3>
+            <div id="response-data">Cargando...</div>
+        </div>
+    </div>
+
+    <script>
+        async function fetchApi() {
+            try {
+                const response = await fetch('/api/data');
+                const data = await response.json();
+                document.getElementById('response-data').innerHTML = 
+                    `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+            } catch (error) {
+                document.getElementById('response-data').innerHTML = 
+                    `<p style="color:red;">Error: ${error.message}</p>`;
+            }
+        }
+        fetchApi();
+    </script>
+</body>
+</html>
